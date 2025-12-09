@@ -1,11 +1,11 @@
 ---
 title: "Blog 3"
 date: "2025-10-16"
-weight: 1
+weight: 3
 chapter: false
-pre: " <b> 3.3. </b> "
+pre: " <b> 3.3 </b> "
 ---
-**Nâng cao hiệu quả đào tạo phân tích bộ gen vi khuẩn với Amazon WorkSpaces**
+# **Nâng cao hiệu quả đào tạo phân tích bộ gen vi khuẩn với Amazon WorkSpaces**
 
 **Tác giả:** Satsawat Natakarnkitkul, Charlie Lee, và Sikharin Kongpaiboon
 

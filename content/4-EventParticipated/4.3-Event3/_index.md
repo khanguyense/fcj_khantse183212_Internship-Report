@@ -1,9 +1,9 @@
 ---
-title: "Event 4"
+title: "Event 3"
 date: "2025-11-16"
 weight: 4
 chapter: false
-pre: " <b> 4.4. </b> "
+pre: " <b> 4.3. </b> "
 ---
 # Summary Report: "AWS Cloud Mastery Series #2: DevOps on AWS"
 

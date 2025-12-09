@@ -3,7 +3,7 @@ title: "Week 3 Worklog"
 date: 2025-09-23
 weight: 3
 chapter: false
-pre: " <b> 1.3. </b> "
+pre: " <b> 1.3 </b> "
 ---
 
 ### Week 3 Objectives:

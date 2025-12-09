@@ -29,7 +29,7 @@ During my internship, I participated in five events. Each one was a memorable ex
 
 ---
 
-### [Event 3](4.4-Event4/)  
+### [Event 3](4.3-Event3/)  
 &emsp;**Event Name:** AWS Cloud Mastery Series #1: AI/ML/GenAI on AWS
 
 &emsp;**Date & Time:** 8:00 - 11:3, November 15, 2025  
@@ -40,7 +40,7 @@ During my internship, I participated in five events. Each one was a memorable ex
 
 ---
 
-### [Event 4](4.5-Event5/)  
+### [Event 4](4.4-Event4/)  
 &emsp;**Event Name:** AWS Cloud Mastery Series #2  
 
 &emsp;**Date & Time:** 8:30 - 17:00, November 17, 2025  
@@ -51,7 +51,7 @@ During my internship, I participated in five events. Each one was a memorable ex
 
 ---
 
-### [Event 5](4.4-Event4/)  
+### [Event 5](4.5-Event5/)  
 &emsp;**Event Name:** AWS Cloud Mastery Series #3  
 
 &emsp;**Date & Time:** 8:30 - 12:00, November 29, 2025  

@@ -3,7 +3,7 @@ title: "Week 5 Worklog"
 date: "2025-10-10"
 weight: 5
 chapter: false
-pre: " <b> 1.5. </b> "
+pre: " <b> 1.5 </b> "
 ---
 
 ### Week 5 Objectives:

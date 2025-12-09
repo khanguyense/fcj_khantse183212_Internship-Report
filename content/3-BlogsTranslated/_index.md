@@ -20,5 +20,3 @@ TSiriraj Medical Research Center’s “Nanopore workshop: bacterial genome bioi
 In the rapidly evolving world of containerized applications, maintaining resilience and observability across Kubernetes environments has become a critical challenge. As organizations increasingly adopt Amazon Elastic Kubernetes Service (Amazon EKS) to manage their containerized workloads, the need for cluster version lifecycle management and discovery mechanisms becomes crucial. As Amazon EKS environments grow more complex and span multiple AWS Regions and accounts, users often struggle to track cluster versions, support lifecycles, and overall deployment status.
 
 Proactive monitoring of EKS cluster lifecycles and end of support is crucial to making sure of the security, stability, and compliance of Kubernetes deployments. Furthermore, gaining visibility into EKS cluster deployments across an entire AWS Organization is essential for effective resource management, strategic planning, and maintaining an accurate inventory.
-
-

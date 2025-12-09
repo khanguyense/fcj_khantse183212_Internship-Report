@@ -9,6 +9,7 @@ chapter: false
 # Internship Report
 
 ### Student Information:
+
 &emsp; **Full Name:** Nguyen Tuan Kha 
 
 &emsp; **Phone Number:** 0835173787 

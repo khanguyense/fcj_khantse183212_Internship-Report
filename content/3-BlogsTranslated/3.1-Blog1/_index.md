@@ -1,11 +1,11 @@
 ---
 title: "Blog 1"
 date: "2025-10-15"
-weight: 1
+weight: 3
 chapter: false
-pre: " <b> 3.1. </b> "
+pre: " <b> 3.1 </b> "
 ---
-**Tăng cường deployment guardrails với tính năng rolling update cho inference component trên Amazon SageMaker AI inference**
+# **Tăng cường deployment guardrails với tính năng rolling update cho inference component trên Amazon SageMaker AI inference**
 
 Bài viết này có đồng tác giả là : Melanie Li, Andrew Smith, Dustin Liu, Vivek Gangasani, Shikhar Mishra, và June Won
 

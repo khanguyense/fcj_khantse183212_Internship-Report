@@ -3,7 +3,7 @@ title: "Worklog Tuần 6"
 date: "2025-10-17"
 weight: 6
 chapter: false
-pre: " <b> 1.6. </b> "
+pre: " <b> 1.6 </b> "
 ---
 
 

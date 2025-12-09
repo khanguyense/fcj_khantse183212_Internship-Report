@@ -3,7 +3,7 @@ title: "Nhật ký Tuần 4"
 date: "2025-09-30"
 weight: 4
 chapter: false
-pre: " <b> 1.4. </b> "
+pre: " <b> 1.4 </b> "
 ---
 
 ### Mục tiêu Tuần 4:

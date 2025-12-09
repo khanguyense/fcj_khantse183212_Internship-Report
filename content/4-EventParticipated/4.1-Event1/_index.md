@@ -1,9 +1,9 @@
 ---
-title: "Event 2"
+title: "Event 1"
 date: "2025-10-04"
-weight: 2
+weight: 4
 chapter: false
-pre: " <b> 4.2. </b> "
+pre: " <b> 4.1. </b> "
 ---
 
 # Summary Report: Club Session – "AI-Driven Development Life Cycle: Reimagining Software Engineering"

@@ -1,6 +1,6 @@
 ---
 title: "Bản đề xuất"
-date: "`r Sys.Date()`"
+date: "2025-12-09"
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
@@ -57,7 +57,7 @@ Academic Research Chatbot áp dụng mô hình AWS Hybrid RAG Architecture với
 
 Luồng xử lý dữ liệu và hội thoại
 
-![Sơ đồ kiến trúc](/static/images/2-Proposal/FCJ-MVP.drawio%20(10).png)
+![Sơ đồ kiến trúc](images/2-Proposal/FCJ-MVP.drawio%20(10).png)
 
 **Dịch vụ AWS sử dụng**
 - **Frontend**: Route 53, CloudFront, Amplify (DNS, CDN, Host React App).

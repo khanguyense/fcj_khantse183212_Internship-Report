@@ -3,7 +3,7 @@ title: "Worklog Tuần 1"
 date: 2025-09-09
 weight: 1
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.1 </b> "
 ---
 ### Mục tiêu Tuần 1:
 

@@ -3,7 +3,7 @@ title: "Nhật ký Tuần 3"
 date: "2025-09-23"
 weight: 3
 chapter: false
-pre: " <b> 1.3. </b> "
+pre: " <b> 1.3 </b> "
 ---
 
 ### Mục tiêu Tuần 3:
