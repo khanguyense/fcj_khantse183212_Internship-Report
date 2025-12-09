@@ -1,57 +1,40 @@
 ---
 title: "Week 2 Worklog"
-date: "`r Sys.Date()`"
-weight: 1
+date: 2025-09-16
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 2 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand AWS Budgets and how to use them to manage and monitor AWS costs.
+* Learn different types of AWS Budgets: Cost Budget, Usage Budget, RI Budget, Savings Plans Budget.
+* Practice creating budgets using templates and custom settings, and cleaning up resources.
+* Understand AWS Support: support plans, how to access AWS Support, and how to create and manage support requests.
+* Build awareness of cost control and how to get help from AWS when issues occur.
+
+---
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task                                                                                                                                                                                                                                  | Start Date | Completion Date | Reference Material                         |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ---------------- | ------------------------------------------ |
+| 1   | - Study **AWS Budgets** overview <br>&emsp; + What is AWS Budgets? <br>&emsp; + Why use budgets to control costs? <br>&emsp; + Types of budgets (Cost, Usage, RI, Savings Plans)                                                     | 09/16/2025 | 09/16/2025       | <https://000007.awsstudygroup.com/>        |
+| 2   | - **Hands-on with Budgets (1):** <br>&emsp; + Create Budget by Template <br>&emsp; + Create a Cost Budget with alert thresholds <br>&emsp; + Review budget details and notification settings                                         | 09/17/2025 | 09/17/2025       | <https://000007.awsstudygroup.com/>        |
+| 3   | - **Hands-on with Budgets (2):** <br>&emsp; + Create a Usage Budget for a specific service (e.g., EC2) <br>&emsp; + Create RI Budget <br>&emsp; + Understand when to use each type of budget                                        | 09/18/2025 | 09/18/2025       | <https://000007.awsstudygroup.com/>        |
+| 4   | - **Hands-on with Budgets (3):** <br>&emsp; + Create Savings Plans Budget <br>&emsp; + Review alerts and examples of cost overrun scenarios <br>&emsp; + Clean up budgets and related resources after the lab                       | 09/19/2025 | 09/19/2025       | <https://000007.awsstudygroup.com/>        |
+| 5   | - Study **AWS Support**: <br>&emsp; + AWS Support Plans and their differences <br>&emsp; + How to access AWS Support Center <br> - **Hands-on:** <br>&emsp; + Navigate to Support Center <br>&emsp; + Create a support case <br>&emsp; + View / update / close support requests | 09/20/2025 | 09/20/2025       | <https://000009.awsstudygroup.com/>        |
+
+---
 
 ### Week 2 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Understood what AWS Budgets is and why it is important for cost management.
+* Learned the differences between Cost Budget, Usage Budget, RI Budget, and Savings Plans Budget.
+* Successfully created budgets using templates and custom settings in the AWS console.
+* Configured budget alerts to receive notifications when costs or usage exceed thresholds.
+* Practiced cleaning up budgets and related resources after completing the lab.
+* Understood the purpose of AWS Support and the different support plans available.
+* Learned how to access AWS Support Center, create a support case, and manage existing support requests.
+* Increased awareness of both **cost control** and **support processes** when operating workloads on AWS.

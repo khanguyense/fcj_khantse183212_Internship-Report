@@ -1,57 +1,43 @@
 ---
 title: "Week 11 Worklog"
-date: "`r Sys.Date()`"
-weight: 2
+date: "2025-11-21"
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
-
 ### Week 11 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Complete the remaining FE interface together with the Frontend team.
+* Coordinate end-to-end testing between FE and BE.
+* Learn the overall deployment workflow of the system (API, FE, database, infrastructure) to gain general understanding, even if not directly responsible.
+* Prepare the necessary notes for Week 12 (documentation & final summary).
+
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                                                                                                                                                        | Start Date | End Date   | Reference Materials |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ---------- | ------------------- |
+| 2   | - Work with the FE team to complete the remaining UI components <br> - Review API contract alignment between FE and BE                                      | 17/11/2025 | 17/11/2025 |                     |
+| 3   | - FE integrates full CRUD API flows <br> - Fix schema, payload, and status code mismatches during FE testing                                                | 18/11/2025 | 18/11/2025 |                     |
+| 4   | - Perform full end-to-end testing: List -> Create -> Update -> Delete from FE to BE <br> - Update response models/validations to match FE expectations      | 19/11/2025 | 19/11/2025 | < >                 |
+| 5   | - Learn the team’s deployment workflow (CI/CD, API Gateway, Lambda, S3 + CloudFront) <br> - Take notes for Week 12 documentation                            | 20/11/2025 | 20/11/2025 |                     |
+| 6   | - Summarize FE and BE issues during the week <br> - Review the entire BE codebase to prepare for deployment environment (even though not the one deploying) | 21/11/2025 | 21/11/2025 |                     |
 
 
 ### Week 11 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Overview:
+  * This week, I mainly collaborated with the FE team to finalize UI components and complete API integration. Since the backend was completed in Week 10, I helped fix issues, standardize API contracts, and conduct full end-to-end testing.  
+    Additionally, I learned the team’s deployment workflow (Lambda, API Gateway, S3/CloudFront, CI/CD) to prepare documentation for Week 12.
 
-* Successfully created and configured an AWS Free Tier account.
+* Theoretical knowledge acquired:
+  * How FE calls CRUD APIs and debugs requests.
+  * API Contract: input/output schemas, error formats, status codes.
+  * Deployment workflow: .NET -> Lambda, API Gateway routing, FE build -> S3/CloudFront.
+  * Overview of CI/CD pipeline and how to prepare code for deployment (configs, logging).
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Practical work / Deliverables:
+  * Collaborated with FE to complete List/Create/Update/Delete screens.
+  * Adjusted backend according to FE requirements (schema, validation, status codes).
+  * Conducted full end-to-end testing between FE ↔ BE on local environment.
+  * Documented deployment workflow for use in Week 12.
+  * Compiled FE and BE issues and updated the team backlog.

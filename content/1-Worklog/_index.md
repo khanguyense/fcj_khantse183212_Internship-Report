@@ -1,39 +1,31 @@
 ---
 title: "Worklog"
-date: "`r Sys.Date()`"
+date: "2025-11-28"
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+**Week 1:** [Getting familiar with AWS and fundamental services (Cloud Fundamentals, IAM, Budget, Support).](1.1-week1/)
 
-**On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?
+**Week 2:** [Learning basic VPC and foundational networking concepts.](1.2-week2/)
 
-Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
+**Week 3:** [Advanced EC2 inside VPC, NAT Gateway, Security Group, DNS Resolver.](1.3-week3/)
 
-**Week 1:** [Getting familiar with AWS and basic AWS services](1.1-week1/)
+**Week 4:** [VPC Peering, Transit Gateway, and complex VPC-to-VPC connectivity.](1.4-week4/)
 
-**Week 2:** [Doing task A...](1.2-week2/)
+**Week 5:** [Compute Services: EC2, Auto Scaling, Backup, and Storage Gateway.](1.5-week5/)
 
-**Week 3:** [Doing task B...](1.3-week3/)
+**Week 6:** [Advanced Storage: S3, Glacier, FSx, and Storage Gateway.](1.6-week6/)
 
-**Week 4:** [Doing task C...](1.4-week4/)
+**Week 7:** [Advanced IAM, AWS Organizations, Identity Center, KMS.](1.7-week7/)
 
-**Week 5:** [Doing task D...](1.5-week5/)
+**Week 8:** [Database Services, ETL (Kinesis/Glue/Athena), DMS Migration.](1.8-week8/)
 
-**Week 6:** [Doing task E...](1.6-week6/)
+**Week 9:** [Workshop – Designing system architecture on AWS (Architecture Design).](1.9-week9/)
 
-**Week 7:** [Doing task G...](1.7-week7/)
+**Week 10:** [Workshop – Building Database + Backend + Frontend.](1.10-week10/)
 
-**Week 8:** [Doing task H...](1.8-week8/)
+**Week 11:** [Workshop – Completing Frontend + Deploying the entire system.](1.11-week11/)
 
-**Week 9:** [Doing task I...](1.9-week9/)
-
-**Week 10:** [Doing task L...](1.10-week10/)
-
-**Week 11:** [Doing task M...](1.11-week11/)
-
-**Week 12:** [Doing task N...](1.12-week12/)
+**Week 12:** [Workshop – Testing, optimizing & writing the final project report.](1.12-week12/)

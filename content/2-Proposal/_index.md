@@ -5,111 +5,193 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
+## Academic Research Chatbot
+### AWS RAG-based solution for smart academic support and research
 
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+#### 1. Executive Summary
+**Academic Research Chatbot** is an AI assistant supporting academic research, helping students and lecturers search, summarize, and analyze scientific documents (PDFs, papers) through natural conversation with accurate source citations.
 
-### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+**Key Highlights:**
+- **Core Technology**: Combines **IDP** (Amazon Textract) to process documents (including scans) and **RAG** (Amazon Bedrock - Claude 3.5 Sonnet) to generate intelligent responses.
+- **Optimized Architecture**: Hybrid model using 1 EC2 t3.small combined with Serverless services (Amplify, Cognito, S3, DynamoDB) to balance performance and cost.
+- **Feasibility**: Serves ~50 internal users with operating costs ~$60/month, fast deployment time (20 days), and maximizes AWS Free Tier.
 
-### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+#### 2. Problem Statement
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+**Current Problem**
+Students and researchers have to work with a large number of academic documents (conference papers, journals, theses, technical reports). Many documents are old scanned PDFs (pre-2000), without a text layer, making searching for content, data, and tables very time-consuming.
+Public AI tools (ChatGPT, Perplexity, NotebookLM, etc.) are not directly connected to the school/department's internal document repository, making it difficult to ensure security and access rights by subject or research group.
+The current infrastructure lacks a unified access point to:
+- Manage research documents by subject/topic.
+- Allow researchers to ask questions directly on their own papers.
+- Ensure answers have clear citations (paper, page, table, section).
+**Consequence:** Researchers have to manually read, take notes, and copy data from multiple papers; lecturers find it difficult to quickly synthesize information when preparing lectures or topics; academic data is scattered across many personal machines, difficult to standardize and reuse.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+**Solution**
+**Academic Research Chatbot** proposes building an internal academic Q&A platform based on AWS, where:
+1.  **Dev/Admin loads research document repository:**
+    -   Upload PDFs to **Amazon S3**, metadata is stored in **Amazon DynamoDB**.
+    -   An EC2 worker consumes the **Amazon SQS** queue, calls **Amazon Textract** to OCR, extract text, tables, forms, including scanned documents.
+    -   Worker normalizes/chunks content, sends to **Amazon Bedrock Titan Text Embeddings v2** to generate embeddings, and indexes into **Qdrant** on EC2.
+2.  **Researchers ask questions via web interface (Amplify + CloudFront):**
+    -   Questions are embedded, querying Qdrant to retrieve the most relevant segments (Retrieval).
+    -   These segments are passed to **Claude 3.5 Sonnet** on **Amazon Bedrock** to generate answers with accurate citations (paper, page, section, table) and explanations in academic context.
+All access is protected by **Amazon Cognito** (researcher vs admin authorization), logs & metrics are monitored via **Amazon CloudWatch + SNS** (alerts on worker errors, queue backlog, high EC2 CPU).
 
-### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+**Benefits and ROI**
+**Academic Efficiency:**
+-   Reduces 40–60% of time researchers spend finding data, F1-scores, p-values, sample sizes, experimental equipment, or method descriptions from multiple papers.
+-   Reduces citation errors due to forgetting pages/tables, as the chatbot always returns sources and locations.
+**Internal Knowledge Management:**
+-   Research documents are centralized in an S3 + DynamoDB repository, easy to backup, authorize, and expand.
+-   Can be reused for many courses, topics, and labs without building a new system.
+**Low & Controllable Infrastructure Costs:**
+-   Hybrid model 1 EC2 + managed AI services keeps operating costs for 50 internal users at around < $50/month, mainly paying for EC2, 2–3 VPC endpoint interfaces, and Bedrock/Textract usage.
+-   The system is designed to be deployed in about 20 days by a team of 4, suitable for a research/internship project but still has product architecture quality.
+**Long-term Value:**
+-   Creates a platform to later integrate learning behavior analysis dashboards, paper recommendation modules, or expand to multi-language and multi-field learning assistants.
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+#### 3. Solution Architecture
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+Academic Research Chatbot applies the AWS Hybrid RAG Architecture model with IDP (Intelligent Document Processing), combining a single EC2 (FastAPI + Qdrant + Worker) with managed AI services (Textract, Bedrock) to optimize costs while ensuring performance for about 50 internal users.
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+**Data Processing and Conversation Flow**
+![Architecture Diagram](/static/images/2-Proposal/FCJ-MVP.drawio%20(10).png)
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+**AWS Services Used**
+-   **Amazon Route 53:** DNS management for chatbot platform domain.
+-   **Amazon CloudFront:** CDN distributing web interface (chat + admin) with low latency.
+-   **AWS Amplify Hosting:** Hosts web application (React/Next) for Researchers and Dev/Admin.
+-   **Amazon Cognito:** User authentication, researcher vs admin role management.
+-   **Amazon S3:** Stores original PDF files uploaded by Dev/Admin (raw documents).
+-   **Amazon SQS (doc_ingestion_queue):** Job queue for document processing.
+-   **Amazon Textract:** IDP/OCR for scanned PDFs and digital PDFs.
+-   **Amazon Bedrock:**
+    -   **Titan Text Embeddings v2:** Generates embedding vectors for text chunks.
+    -   **Claude 3.5 Sonnet:** Generates academic answers from context + user questions (RAG).
+-   **Amazon DynamoDB:** Documents table: document metadata, pipeline status (UPLOADED, IDP_RUNNING, EMBEDDING_DONE, FAILED).
+-   **Amazon EC2 (t3.small, private subnet):**
+    -   Runs FastAPI backend (REST API for chat and admin).
+    -   Runs Qdrant Vector DB to store and query embeddings.
+    -   Runs Worker process consuming SQS, calling Textract + Titan, indexing into Qdrant, updating DynamoDB.
+-   **VPC + ALB + VPC Endpoints:**
+    -   VPC + private subnet for EC2 (not directly exposed to Internet).
+    -   Application Load Balancer (ALB): entry point for all APIs from Amplify to EC2.
+    -   Gateway Endpoint (S3, DynamoDB) and Interface Endpoint (Textract, Bedrock, SQS – if used) for EC2 to call AWS services without NAT Gateway.
+-   **Amazon CloudWatch + Amazon SNS:**
+    -   Collects logs and metrics from EC2, ALB, SQS.
+    -   CloudWatch Alarms send alerts via SNS when CPU is high, SQS backlog, worker errors, etc.
+-   **AWS CodePipeline / CodeBuild:** Automates build & deploy for backend (FastAPI on EC2).
 
-### 4. Technical Implementation
+**Component Design**
+-   **Users:**
+    -   **Researchers:** Q&A, academic content lookup.
+    -   **Dev/Admin:** Upload, manage, and re-index documents.
+-   **Document Processing (IDP):**
+    -   PDFs uploaded by Dev/Admin to S3.
+    -   Worker on EC2 calls Textract for OCR and text/table extraction.
+-   **Indexing & Vector DB:**
+    -   Worker normalizes, chunks content.
+    -   Calls Bedrock Titan Embeddings v2 to create embeddings.
+    -   Saves embeddings + metadata to Qdrant on EC2.
+-   **AI Conversation (RAG):**
+    -   FastAPI embeds question, queries Qdrant for top-k relevant segments.
+    -   Sends context + question to Claude 3.5 Sonnet (Bedrock) to generate answer with citation.
+-   **User Management:**
+    -   Cognito authenticates and authorizes researcher / admin.
+-   **Storage & State:**
+    -   DynamoDB stores document metadata (doc_id, status, owner, …) and (optional) chat history.
+
+#### 4. Technical Implementation
 **Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+The project consists of 2 main parts — web platform (UI + auth) and RAG + IDP backend — deployed across 4 phases:
+-   **Research & Architecture Finalization:**
+    -   Review requirements (50 researchers, 1 EC2, IDP + RAG).
+    -   Finalize architecture: VPC, EC2 (FastAPI + Qdrant + Worker), Amplify, Cognito, S3, SQS, DynamoDB, Textract, Bedrock.
+-   **POC & Connectivity Check:**
+    -   Create EC2, VPC endpoints, test calling Textract, Titan Embeddings, Claude 3.5 Sonnet.
+    -   Run simple Qdrant on EC2, test vector insert/search.
+    -   Create skeleton FastAPI + a minimal Chat UI on Amplify.
+-   **Feature Completion:**
+    -   Build /api/chat (FastAPI) + RAG pipeline: embed query → Qdrant → Claude + citation.
+    -   Build /api/admin/: upload PDF, save to S3 + DynamoDB, push message to SQS.
+    -   Write Worker on EC2: SQS → Textract → normalize/chunk → Titan → Qdrant → update DynamoDB.
+    -   Complete Chat UI and Admin UI (upload + view document status).
+-   **Testing, Optimization, Internal Demo Deployment:**
+    -   End-to-end test with a set of ~50–100 papers.
+    -   Add CloudWatch Logs/Alarms, SNS notify on error or queue backlog.
+    -   Adjust EC2, Qdrant configuration, batch size to optimize time and cost.
+    -   Prepare user guide and demo for the group of 50 researchers.
 
 **Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+-   **Frontend & Auth:**
+    -   React/Next.js hosted on AWS Amplify, CloudFront CDN, Route 53 DNS.
+    -   Amazon Cognito manages identity and permissions (Researcher/Admin).
+-   **Backend & Compute:**
+    -   EC2 t3.small (Private Subnet) running All-in-one: FastAPI, Qdrant Vector DB, and Worker.
+    -   Asynchronous processing: Worker reads SQS, triggers Textract and Bedrock to index data.
+-   **IDP & RAG:**
+    -   **Storage:** S3 (Original files), DynamoDB (Metadata & Status).
+    -   **AI Core:** Textract (OCR scanned docs), Bedrock Titan (Embedding), Claude 3.5 Sonnet (Question Answering).
+-   **Network & Observability:**
+    -   **Network:** VPC Private Subnet, VPC Endpoints for secure connection to AWS Services.
+    -   **Monitoring:** CloudWatch Logs/Metrics + SNS alerts (High CPU, Worker errors).
 
-### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+#### 5. Timeline & Milestones
+The project is executed over approximately 6 weeks with specific phases:
+-   **Week 1-2 (Days 1-10): Research & Design**
+    -   Detailed architecture design, scope definition, service selection. Planning for operational cost optimization and deployment.
+-   **Week 3 (Days 11-15): AWS Infrastructure Setup**
+    -   Configure VPC, Subnets, Security Groups, IAM Roles.
+    -   Deploy EC2 t3.small, S3 bucket, DynamoDB tables.
+    -   Setup VPC Endpoints (Gateway + Interface).
+-   **Week 4 (Days 16-20): Backend APIs & IDP Pipeline**
+    -   Build FastAPI endpoints (`/api/chat`, `/api/admin/upload`).
+    -   Integrate IDP pipeline: SQS → Worker → Textract → Embeddings → Qdrant.
+    -   Connect Bedrock (Titan Embeddings + Claude 3.5 Sonnet).
+-   **Week 5 (Days 21-25): Testing & Error Handling**
+    -   End-to-end testing with a set of ~50-100 papers.
+    -   Handle edge cases, retry logic, error handling.
+    -   Optimize chunking strategy and retrieval accuracy.
+-   **Week 6 (Days 26-30): Deployment & Documentation**
+    -   Finalize UI/UX for Admin and Researcher.
+    -   Setup CloudWatch Alarms + SNS notifications.
+    -   Prepare user guide and demo for the group of 50 researchers.
 
-### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
+#### 6. Budget Estimation
+You can view costs on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)
+Or download the [Budget Estimation File](../attachments/budget_estimation.pdf).
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+**Infrastructure Costs (Estimated Monthly)**
+-   **Fixed Infrastructure (~$40–45):**
+    -   **Compute & Network:** EC2 t3.small (~$15) + VPC Endpoints (~$20).
+    -   **Storage & Web:** S3, DynamoDB, SQS, Amplify, CloudWatch (~$5–10).
+-   **AI Costs (Variable):**
+    -   **Amazon Textract:** ~$15–25 (batch processing first 10,000 pages).
+    -   **Amazon Bedrock:** ~$5–15 (serving 50 users).
+**Total:** **~$50–60/month** for internal research environment.
 
-Total: $0.7/month, $8.40/12 months
+#### 7. Risk Assessment
+**Risk Matrix**
+-   **Hallucination (AI fabrication):** High impact, medium probability.
+-   **Budget Overrun (AI Services):** Medium impact, medium probability.
+-   **Infrastructure Failure (EC2/Qdrant):** High impact, low probability.
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+**Mitigation Strategies**
+-   **AI Quality:** Mandatory source citations, limit input context from Qdrant.
+-   **Cost:** Set up AWS Budgets/Alarms, control document ingestion volume.
+-   **Infrastructure & Security:** Periodic EBS backups, data encryption (S3/DynamoDB), strict permissions via Cognito/IAM.
 
-### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
+**Contingency Plans**
+-   **System Failure:** Restore from Snapshot, pause ingestion (buffer via SQS).
+-   **Cost Overrun:** Temporarily lock new uploads, limit daily query quotas.
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+#### 8. Expected Outcomes
+**Technical Improvements**
+-   Transform scattered document repositories (PDF/Scan) into digital knowledge queryable and automatically citable.
+-   Significantly reduce manual search time thanks to RAG + IDP technology.
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
-
-### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+**Long-term Value**
+-   Build a digitized research platform for 50+ researchers, easily scalable.
+-   Create a foundation for advanced features: Document recommendations, research trend analysis, and Literature Review support.

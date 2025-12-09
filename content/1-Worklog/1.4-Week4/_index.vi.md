@@ -1,59 +1,42 @@
 ---
-title: "Worklog Tuần 4"
-date: "`r Sys.Date()`"
-weight: 1
+title: "Nhật ký Tuần 4"
+date: "2025-09-30"
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 4:
 
-### Mục tiêu tuần 4:
+* Hiểu cách khởi tạo và quản lý EC2 Windows và Linux.
+* Thực hành triển khai ứng dụng trên EC2 (Node.js & AWS User Management App).
+* Hiểu IAM governance và quản lý chi phí EC2 thông qua IAM.
+* Hiểu cách ứng dụng truy cập dịch vụ AWS qua IAM Role thay cho Access Key.
+* Thực hành gán IAM Role cho EC2 và kiểm tra quyền truy cập của ứng dụng.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+---
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các nhiệm vụ thực hiện trong tuần:
 
+| Ngày | Nhiệm vụ                                                                                                                                                                                                                                           | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                         |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------------- | ------------------------------------------ |
+| 1    | - Tìm hiểu giới thiệu EC2 & bước chuẩn bị <br>&emsp; + Khái niệm EC2 <br>&emsp; + Các tài nguyên cần thiết <br>&emsp; + Yêu cầu IAM & networking                                                          | 09/30/2025   | 09/30/2025       | <https://000004.awsstudygroup.com/>        |
+| 2    | - **Khởi tạo EC2:** <br>&emsp; + Tạo Windows Server 2022 instance <br>&emsp; + Tạo Amazon Linux instance <br>&emsp; + Kết nối và kiểm tra truy cập                                                         | 10/01/2025   | 10/01/2025       | <https://000004.awsstudygroup.com/>        |
+| 3    | - **Triển khai ứng dụng:** <br>&emsp; + Triển khai AWS User Management App trên Amazon Linux 2 <br>&emsp; + Triển khai Node.js App trên Windows EC2                                                        | 10/02/2025   | 10/02/2025       | <https://000004.awsstudygroup.com/>        |
+| 4    | - **IAM Governance & Authorization:** <br>&emsp; + Hiểu governance chi phí & sử dụng với IAM <br>&emsp; + So sánh Access Key vs IAM Role <br>&emsp; + Rủi ro của việc dùng Access Key lâu dài              | 10/03/2025   | 10/03/2025       | <https://000048.awsstudygroup.com/>        |
+| 5    | - **Thực hành IAM Role cho EC2:** <br>&emsp; + Tạo IAM Role cho EC2 <br>&emsp; + Gán Role vào EC2 instance <br>&emsp; + Kiểm tra ứng dụng truy cập AWS qua Role <br>&emsp; + Clean up resource sau bài học | 10/04/2025   | 10/04/2025       | <https://000048.awsstudygroup.com/>        |
 
-### Kết quả đạt được tuần 4:
+---
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Thành tựu Tuần 4:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Khởi tạo thành công EC2 Windows và Linux.
+* Hiểu cách chuẩn bị môi trường EC2 để triển khai ứng dụng.
+* Triển khai thành công 2 ứng dụng:
+  * AWS User Management App (Linux)
+  * Node.js App (Windows)
+* Hiểu rõ IAM governance & ảnh hưởng của IAM tới chi phí và bảo mật.
+* Nắm được lý do không nên dùng Access Key cho ứng dụng.
+* Tạo và gán IAM Role cho EC2, giúp ứng dụng truy cập AWS service an toàn.
+* Kiểm tra thành công quyền truy cập dựa trên IAM Role.
+* Dọn dẹp tài nguyên để tránh phát sinh chi phí.

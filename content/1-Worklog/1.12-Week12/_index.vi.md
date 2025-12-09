@@ -1,58 +1,33 @@
 ---
-title: "Worklog Tuần 12"
-date: "`r Sys.Date()`"
-weight: 2
+title: "Nhật ký công việc"
+date: "2025-12-09"
+weight: 1
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-### Mục tiêu tuần 12:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
 
-### Kết quả đạt được tuần 12:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản (Cloud Fundamentals, IAM, Budget, Support).](1.1-week1/)
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+**Tuần 2:** [Học VPC cơ bản và các kiến thức networking nền tảng.](1.2-week2/)
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+**Tuần 3:** [Nâng cao EC2 trong VPC, NAT Gateway, Security Group, DNS Resolver.](1.3-week3/)
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+**Tuần 4:** [VPC Peering, Transit Gateway và kết nối phức tạp giữa VPC.](1.4-week4/)
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+**Tuần 5:** [Compute Services: EC2, Auto Scaling, Backup và Storage Gateway.](1.5-week5/)
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+**Tuần 6:** [Storage nâng cao: S3, Glacier, FSx và Storage Gateway.](1.6-week6/)
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+**Tuần 7:** [IAM nâng cao, AWS Organizations, Identity Center, KMS.](1.7-week7/)
 
+**Tuần 8:** [Database Services, ETL (Kinesis/Glue/Athena), DMS Migration.](1.8-week8/)
 
+**Tuần 9:** [Workshop – Thiết kế kiến trúc hệ thống trên AWS (Architecture Design).](1.9-week9/)
+
+**Tuần 10:** [Workshop – Xây dựng Database + Backend + Frontend.](1.10-week10/)
+
+**Tuần 11:** [Workshop – Hoàn thiện FE + Deploy toàn bộ hệ thống.](1.11-week11/)
+
+**Tuần 12:** [Workshop – Kiểm tra, test, tối ưu & viết báo cáo tổng hợp.](1.12-week12/)

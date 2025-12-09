@@ -1,59 +1,56 @@
 ---
-title: "Worklog Tuần 3"
-date: "`r Sys.Date()`"
-weight: 1
+title: "Nhật ký Tuần 3"
+date: "2025-09-23"
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 3:
 
-### Mục tiêu tuần 3:
+* Hiểu sâu hơn về kiểm soát truy cập với AWS IAM: User, Group, Policy, Role.
+* Biết cách thiết kế mô hình phân quyền an toàn dựa trên IAM Role và nguyên tắc “least privilege”.
+* Thực hành tạo IAM Group, IAM User, IAM Role và kịch bản Switch Role.
+* Nắm các khái niệm mạng cơ bản trong Amazon VPC: Subnet, Route Table, Internet Gateway, NAT Gateway.
+* Thực hành xây dựng VPC, cấu hình Security Group, Network ACL và làm quen với Site-to-Site VPN.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+---
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các nhiệm vụ thực hiện trong tuần:
 
+| Ngày | Nhiệm vụ                                                                                                                                                                                                                                                     | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                         |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | ---------------- | ------------------------------------------ |
+| 1    | - Tìm hiểu tổng quan về IAM Access Control <br>&emsp; + IAM User & IAM Group <br>&emsp; + IAM Policy <br>&emsp; + IAM Role <br> - Ôn lại mục tiêu bảo mật và nguyên tắc least privilege                                                                       | 09/23/2025   | 09/23/2025       | <https://000002.awsstudygroup.com/>        |
+| 2    | - **Thực hành IAM (1):** <br>&emsp; + Tạo Admin IAM Group <br>&emsp; + Tạo Admin User và thêm vào group <br>&emsp; + Đăng nhập bằng Admin User và kiểm tra quyền                                                      | 09/24/2025   | 09/24/2025       | <https://000002.awsstudygroup.com/>        |
+| 3    | - **Thực hành IAM (2):** <br>&emsp; + Tạo Admin Role <br>&emsp; + Tạo OperatorUser <br>&emsp; + Cấu hình trust relationship cho Switch Role <br>&emsp; + Test Switch Role từ OperatorUser <br>&emsp; + Rà soát & dọn dẹp cấu hình không cần thiết | 09/25/2025   | 09/25/2025       | <https://000002.awsstudygroup.com/>        |
+| 4    | - Học lý thuyết về Amazon VPC: <br>&emsp; + Subnet <br>&emsp; + Route Table <br>&emsp; + Internet Gateway <br>&emsp; + NAT Gateway <br> - So sánh và hiểu vai trò: <br>&emsp; + Security Group <br>&emsp; + Network ACL                                  | 09/26/2025   | 09/26/2025       | <https://000003.awsstudygroup.com/>        |
+| 5    | - **Thực hành VPC & Networking:** <br>&emsp; + Tạo VPC, Subnet, Internet Gateway, Route Table, Security Group <br>&emsp; + Bật VPC Flow Logs <br>&emsp; + Tạo EC2 trong VPC và test kết nối <br>&emsp; + Đọc và hiểu các bước cấu hình Site-to-Site VPN   | 09/27/2025   | 09/27/2025       | <https://000003.awsstudygroup.com/>        |
 
-### Kết quả đạt được tuần 3:
+---
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Thành tựu Tuần 3:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Hiểu rõ hơn về các thành phần IAM trong kiểm soát truy cập:
+  * IAM User, IAM Group  
+  * IAM Policy và cách gán quyền  
+  * IAM Role và trust relationship  
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Xây dựng được cấu trúc IAM cơ bản cho quản trị:
+  * Tạo Admin Group, Admin User  
+  * Kiểm tra quyền dựa trên group thay vì gán trực tiếp  
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Thực hành mô hình phân quyền nâng cao:
+  * Tạo Admin Role và OperatorUser  
+  * Cấu hình và test Switch Role trong Console  
+  * Áp dụng nguyên tắc least privilege khi phân quyền  
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Nắm được các khái niệm chính của Amazon VPC:
+  * Subnet, Route Table, Internet Gateway, NAT Gateway  
+  * Phân biệt Security Group và Network ACL  
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Tự tay xây dựng một môi trường VPC nhỏ:
+  * Tạo VPC, subnet, routing, lớp bảo mật  
+  * Khởi tạo EC2 trong VPC và kiểm tra kết nối  
+  * Bật VPC Flow Logs để quan sát traffic  
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Nắm được luồng tổng quát để thiết lập AWS Site-to-Site VPN cho môi trường hybrid.

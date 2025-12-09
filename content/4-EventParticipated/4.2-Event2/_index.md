@@ -1,126 +1,83 @@
 ---
-title: "Event 2"
-date: "`r Sys.Date()`"
-weight: 1
+title: "Event 3"
+date: "2025-11-16"
+weight: 3
 chapter: false
-pre: " <b> 4.2. </b> "
+pre: " <b> 4.3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# Summary Report: "AWS Cloud Mastery Series #1: AI/ML/GenAI on AWS"
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+### Purpose of the Workshop
+- Provide an overview of the AI/ML/GenAI ecosystem on AWS, focusing on the most important services.
+- Equip attendees with practical knowledge of the AI/ML workflow—from data preparation to model training and deployment using Amazon SageMaker.
+- Introduce the application of Generative AI with Amazon Bedrock, including prompt engineering, RAG, and building automation agents.
+- Create an environment for students and developers to connect and exchange real-world AI/ML experience on the cloud.
 
-### Event Objectives
+### Speakers / Instructors (According to the workshop program)
+- **Nguyễn Gia Hưng** – Head of Solutions Architect, AWS Vietnam  
+- **Trần Thị Minh Anh** – Senior AI/ML Specialist Solutions Architect, AWS  
+- **Lê Quang Huy** – Cloud Engineer & AI Enthusiast  
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+---
 
-### Speakers
+### Key Content & Learnings
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+#### 1. Overview of AWS AI/ML/GenAI Ecosystem
+- **Vietnam landscape**: AI adoption is growing rapidly; demand for AI/ML and cloud-skilled engineers continues to rise.
+- **Learning roadmap**: From foundational courses to advanced certifications, emphasizing hands-on practice.
+- **Three service groups**: AI Services (ready-to-use), ML Services (customizable), and Generative AI (opening new possibilities).
 
-### Key Highlights
+#### 2. Amazon SageMaker – A Complete ML Platform
+- Supports the entire ML lifecycle in a single platform.
+- **SageMaker Studio** provides an integrated development environment that accelerates model development.
+- Enables MLOps, training automation, hyperparameter tuning, and model deployment.
 
-#### Identifying the drawbacks of legacy application architecture
+#### 3. Generative AI with Amazon Bedrock
+- Offers multiple Foundation Models such as Claude, Llama, and Titan for different tasks.
+- **Advanced Prompt Engineering**: using Chain-of-Thought, few-shot techniques for improved output quality.
+- **RAG (Retrieval-Augmented Generation)**: combines LLMs with private data to reduce hallucination and expand knowledge scope.
+- **Bedrock Agents**: enable models to perform multi-step tasks and interact with external systems.
+- **Guardrails**: ensure safe content and compliance.
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
-
-#### Transitioning to modern application architecture – Microservices
-
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
-
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
-
-#### Domain-Driven Design (DDD)
-
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
-
-#### Event-Driven Architecture
-
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+---
 
 ### Key Takeaways
 
-#### Design Mindset
+#### Technology Insights
+- SageMaker is not just a training tool but a comprehensive ML lifecycle management platform.
+- Effective Generative AI relies on the combination of models, prompt techniques, and supporting architectures like RAG.
+- Data remains the most critical factor influencing model quality.
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+#### Mindset & Methodology
+- Start with real-world problems instead of chasing technology trends.
+- Apply an iterative approach: fast prototyping → gather feedback → improve.
+- Always evaluate cost to ensure project feasibility.
 
-#### Technical Architecture
+#### Practical Skills
+- Prompt engineering requires continuous practice.
+- Proficiency in AWS Console/SDK is essential for building real-world AI products.
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+---
 
-#### Modernization Strategy
+### Personal Action Plan After the Workshop
+1. **Practice using AWS Free Tier** — start with SageMaker Studio Lab to explore ML workflows.
+2. **Build a first GenAI application** — for example, creating a simple chatbot using Amazon Bedrock.
+3. **Deepen learning through AWS Skill Builder** — complete learning paths for ML and Generative AI.
+4. **Join Vietnam AI/ML communities** to stay updated with case studies and hands-on knowledge.
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+---
 
-### Applying to Work
+### Personal Experience at the Event
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+The “AI/ML/GenAI on AWS” workshop provided a clearer and more practical perspective on how to approach AI in a professional direction. The modern AWS office environment, the enthusiasm of the speakers, and their easy-to-understand explanations made the content very engaging.
 
-### Event Experience
+**The live demo was the most impressive part.** Seeing Ms. Minh Anh build a working RAG system and Bedrock Agent in a short time made me realize how accessible AI prototyping has become when using the right tools.
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+Insights about **cost management and MLOps** were especially valuable—they helped me understand that AI is not just about building a model, but also about managing, monitoring, and optimizing it continuously.
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+After the workshop, I feel more confident in pursuing AI/ML on AWS, as I now have a clearer and more practical roadmap to follow.
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+---
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
 
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.

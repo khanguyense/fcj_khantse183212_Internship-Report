@@ -1,59 +1,43 @@
 ---
 title: "Worklog Tuần 5"
-date: "`r Sys.Date()`"
-weight: 1
+date: "2025-10-10"
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 5:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tìm hiểu các thành phần chính của EC2 và cách vận hành compute trong AWS.
+* Nắm cơ chế Auto Scaling, EBS, Instance Store, User Data, Metadata.
+* Thực hành backup, Storage Gateway và triển khai EC2 phục vụ cho lưu trữ.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc                                                                                                                                                                                                                                              | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2   | - Tìm hiểu về EC2, các loại instance, AMI, key pair <br> - Biết được EBS, Instance Store, User Data, Metadata                                                                                                                                          | 06/10/2025   | 06/10/2025      | <https://youtu.be/-t5h4N6vfBs?si=GeVdhO9IEDjzzS_D> <br><br> <https://youtu.be/e7XeKdOVq40?si=T3I4pgPoEfVytcU3> <br><br> <https://youtu.be/yAR6QRT3N1k?si=GQghyBwLCpijrDON> <br><br> <https://youtu.be/hKr_TfGP7NY?si=gR2MqaLAFrqL-KBo> <br><br> <https://youtu.be/6IHNDJ85aoQ?si=M0puk6DJpliO7ahf> <br><br> <https://youtu.be/_v_43Wi7zjo?si=qNDVWzKcQFNO2mGh> <br><br> <https://youtu.be/Ew3QRaKJQSA?si=xNvXvD8yFhnSMJby> |
+| 3   | - Nắm bắt được EC2 Auto Scaling và cách scale VM <br> -  tìm hiểu về các dịch vụ lưu trữ và compute (EFS/FSx, Lightsail, MGN overview)                                                                                                                 | 07/10/2025   | 07/10/2025      | <https://youtu.be/bbLcPitXJSY?si=eyVnxvL9ho0LpUYy> <br><br> <https://youtu.be/hFVYG8WqfU0?si=9Px4wmR4IRZxk15n>                                                                                                                                                                                                                                                                                                             |
+| 4   | - **Thực hành:** <br>&emsp; +  Deploy AWS Backup  <br>&emsp; + Create backup plan <br>&emsp; + Test restore & cleanup <br>&emsp; + Dọn dẹp backup                                                                                                      | 08/10/2025   | 08/10/2025      | <https://000013.awsstudygroup.com>                                                                                                                                                                                                                                                                                                                                                                                         |
+| 5   | - **Thực hành:** <br>&emsp; + Create S3 bucket để làm Storage Gateway <br>&emsp; + Create EC2 cho Storage Gateway <br>&emsp; + Create Storage Gateway + File Share <br>&emsp; + Dọn dẹp Storage Gateway                                                | 09/10/2025   | 09/10/20255     | <https://000024.awsstudygroup.com>                                                                                                                                                                                                                                                                                                                                                                                         |
+| 6   | - **Thực hành:** <br>&emsp; + Create bucket, upload dữ liệu <br>&emsp; + Enable static website hosting <br>&emsp; + Cấu hình public access block <br>&emsp; + Cấu hình CloudFront và test website  <br>&emsp; +  Dọn dẹp website + CloudFront + bucket | 10/10/2025   | 10/10/2025      | <https://000057.awsstudygroup.com>                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
 ### Kết quả đạt được tuần 5:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tổng quát: 
+  * Trong tuần này tôi đã hiểu cơ chế vận hành EC2, các loại storage của instance, Auto Scaling và backup. Đồng thời làm quen Storage Gateway và triển khai S3 static website
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Lý thuyết đã học:
+  * Khái niệm về kiến trúc EC2, AMI, key pair
+  * EBS vs Instance Store
+  * User Data / Metadata
+  * EC2 Auto Scaling
+  * Storage Gateway và nền tảng về Backup
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+  
+* Thực hành với bài lab:
+  * Tạo backup plan + test restore
+  * Tạo Storage Gateway + file share
+  * Tạo static website bằng S3 + CloudFront
 

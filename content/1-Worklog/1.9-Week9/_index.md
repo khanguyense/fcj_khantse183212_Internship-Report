@@ -1,57 +1,44 @@
 ---
 title: "Week 9 Worklog"
-date: "`r Sys.Date()`"
-weight: 1
+date: "2025-11-07"
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
-
 ### Week 9 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
+* Learn the overall Serverless architecture and its core components: API Gateway, Lambda, DynamoDB.
+* Design the full application architecture: backend, frontend, authentication, security, and integrations.
+* Explore the security and edge layer: CloudFront, Route 53, WAF.
+* Learn the authentication system with Amazon Cognito and how tokens are issued for APIs.
+* Analyze how CI/CD is implemented using CodePipeline, CodeBuild, GitLab, and IaC (CloudFormation).
+* Learn AWS observability and monitoring systems: CloudWatch, X-Ray, SNS.
+  
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Day | Task                                                                                                       | Start Date | End Date   | Reference Materials |
+| --- | ---------------------------------------------------------------------------------------------------------- | ---------- | ---------- | ------------------- |
+| 2   | - Learn Serverless architecture <br> - API Gateway, Lambda, DynamoDB & integration mechanisms              | 03/11/2025 | 03/11/2025 |                     |
+| 3   | - Design full architecture (BE + FE + Auth + Edge) <br> - Draw architecture diagram & request flow         | 04/11/2025 | 04/11/2025 |                     |
+| 4   | - Learn CloudFront, Route 53, WAF <br> - Design security layer in front of API Gateway                     | 05/11/2025 | 05/11/2025 |                     |
+| 5   | - Learn Cognito (User Pool, Token) <br> - Analyze how API Gateway validates JWT tokens                     | 06/11/2025 | 06/11/2025 |                     |
+| 6   | - Learn CI/CD: CloudFormation, CodePipeline, CodeBuild <br> - Observability system: CloudWatch, X-Ray, SNS | 07/11/2025 | 07/11/2025 |                     |
 
 ### Week 9 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Overview:  
+  * This week, I focused on understanding and designing the Serverless architecture for the application. I gained a solid understanding of how API Gateway – Lambda – DynamoDB work together, and explored the security layer using CloudFront/WAF as well as authentication via Cognito. I also learned the CI/CD workflow and logging/monitoring mechanisms to prepare for the coding phases in the upcoming weeks.
 
-* Successfully created and configured an AWS Free Tier account.
+* Theory Learned:
+  * Serverless architecture, pay-per-use model, and autoscaling principles.  
+  * API Gateway REST API, Lambda integration, and DynamoDB table workflow.  
+  * CloudFront + WAF + Route 53 for API protection.  
+  * Cognito User Pool & Tokens (ID/Access), JWT flow through API Gateway authorizer.  
+  * CI/CD with CodePipeline + CodeBuild + CloudFormation.  
+  * CloudWatch logs/metrics, SNS alerts, tracing using X-Ray.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Practice / Deliverables:
+  * Full system architecture diagram (BE – FE – Auth – Edge).  
+  * Request flow from client -> CloudFront -> API Gateway -> Lambda -> DynamoDB.  
+  * Security diagram: CDN, DNS, WAF, throttling & protection at API Gateway.  
+  * Preliminary CI/CD pipeline design using CloudFormation & CodePipeline.  
+  * Authentication flow design: Cognito -> API Gateway JWT Authorizer.

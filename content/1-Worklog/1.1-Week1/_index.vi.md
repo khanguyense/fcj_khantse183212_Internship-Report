@@ -1,59 +1,49 @@
 ---
 title: "Worklog Tuần 1"
-date: "`r Sys.Date()`"
+date: 2025-09-09
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+### Mục tiêu Tuần 1:
 
+* Hiểu cấu trúc tài khoản AWS và vai trò của Root User.
+* Học cách tạo và bảo mật tài khoản AWS.
+* Thiết lập IAM User, IAM Group và gán chính sách quyền.
+* Kích hoạt MFA và cấu hình cảnh báo chi phí.
+* Làm quen với giao diện AWS Management Console.
 
-### Mục tiêu tuần 1:
+### Các nhiệm vụ thực hiện trong tuần:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+| Ngày | Nhiệm vụ                                                                                                                                                                                                                                    | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------------- | ------------------------------------------ |
+| 1    | - Tổng quan về tài khoản AWS và trách nhiệm của Root User <br> - Hiểu các khái niệm IAM (User, Group, Policy)                                                                                                                             | 09/09/2025   | 09/09/2025       | <https://000001.awsstudygroup.com/>        |
+| 2    | - Tạo tài khoản AWS <br> - Thêm phương thức thanh toán <br> - Xác thực email & số điện thoại <br> - Đăng nhập lần đầu và khám phá AWS Console                                                                                            | 09/10/2025   | 09/10/2025       | <https://000001.awsstudygroup.com/>        |
+| 3    | - Bảo mật tài khoản Root <br>&emsp; + Kích hoạt MFA <br>&emsp; + Cấu hình password policy <br>&emsp; + Giảm thiểu việc sử dụng Root User <br> - Thiết lập Billing Preferences & theo dõi Free Tier                                        | 09/11/2025   | 09/11/2025       | <https://000001.awsstudygroup.com/>        |
+| 4    | - Tạo IAM Group (Administrators) <br> - Gắn AdministratorAccess policy <br> - Tạo IAM User <br> - Cấu hình đăng nhập cho user và bật MFA                                                           | 09/12/2025   | 09/12/2025       | <https://000001.awsstudygroup.com/>        |
+| 5    | - Tạo Budget và Billing Alerts <br> - Kiểm tra danh sách bảo mật tài khoản <br> - Thực hành đăng nhập bằng IAM User <br> - Khám phá giao diện AWS Console <br> - Tổng kết bài học & các vấn đề phát sinh | 09/13/2025   | 09/13/2025       | <https://000001.awsstudygroup.com/>        |
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+---
 
+### Thành tựu Tuần 1:
 
-### Kết quả đạt được tuần 1:
+* Hiểu rõ các thành phần của tài khoản AWS:  
+  * Root User  
+  * IAM Users  
+  * IAM Groups  
+  * Policies  
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tạo và kích hoạt thành công tài khoản AWS mới.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Bảo mật tài khoản Root bằng MFA và thiết lập tiêu chuẩn mật khẩu.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Thiết lập Billing Preferences, theo dõi Free Tier và cấu hình ngân sách cảnh báo chi phí.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Tạo IAM Group và IAM User theo đúng best practices của AWS.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Kích hoạt MFA cho IAM User và thực hành quy trình đăng nhập bảo mật.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Làm quen với AWS Management Console và cách tìm kiếm dịch vụ nhanh chóng.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+* Hoàn thành các bước bảo mật nền tảng trước khi bắt đầu sử dụng các dịch vụ AWS trong các tuần tiếp theo.
 

@@ -1,59 +1,45 @@
 ---
 title: "Worklog Tuần 7"
-date: "`r Sys.Date()`"
-weight: 1
+date: "2025-10-24"
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 7:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tìm hiểu toàn bộ IAM: user, group, role, policy, permission boundary.
+* Tìm hiểu cơ chế xác thực và phân quyền trong AWS, cách viết policy JSON và cách evaluate.
+* Làm quen AWS Organizations, OU, Service Control Policy (SCP).
+* Thực hành lab IAM + Organization để hình dung cách quản lý tài khoản ở quy mô lớn.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc                                                                                                                                                                                                     | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                                                                                                  |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | --------------------------------------------------------------------------------------------------------------- |
+| 2   | - Tìm hiểu tổng quan IAM: user, group, role, policy <br> - Nắm cách hoạt động của policy evaluation: explicit deny, implicit deny, allow                                                                      | 20/10/2025   | 20/10/2025      | <https://youtu.be/tsobAlSg19g?si=9f3mlIWPtrCcNuKg> <br><br> <https://youtu.be/N_vlJGAqZxo?si=e8oiWCObco95CoKh>  |
+| 3   | - **Thực hành:** <br>&emsp; + Create user/group/role <br>&emsp; + Gán inline policy & managed policy <br>&emsp; + Test truy cập S3/EC2 theo từng policy <br> - Tìm hiểu permission boundary và session policy | 21/10/2025   | 21/10/2025      | <https://000028.awsstudygroup.com>                                                                              |
+| 4   | - Tìm hiểu AWS Organizations: cấu trúc OU, tạo nhiều account <br> - Khái niệm SCP, deny list, allow list                                                                                                      | 22/10/2025   | 22/10/2025      | <https://youtu.be/5oQY8Rogz9Y?si=h8DlUb8ZLI4HbbvM>  <br><br> <https://youtu.be/NW1xrMkNMjU?si=dhT0T3y2JYVK8QwT> |
+| 5   | - **Thực hành:** <br>&emsp; + Create Organization + OU <br>&emsp; + Áp dụng SCP deny Ec2 / deny S3 <br>&emsp; + Kiểm tra hiệu lực SCP kết hợp IAM polic <br>&emsp; + Sắp xếp lại OU, remove SCP               | 23/10/2025   | 23/10/2025      | <https://000030.awsstudygroup.com> <br><br> <https://000044.awsstudygroup.com/>                                 |
+| 6   | - **Làm việc nhóm:** <br>&emsp; + Thảo luận ý tưởng về workshop <br>&emsp; + Cách thực hiện <br>&emsp; + Chia phần cho workshop                                                                               | 24/10/2025   | 24/10/2025      |                                                                                                                 |
 
 
 ### Kết quả đạt được tuần 7:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tổng quát: 
+  * Trong tuần này tôi đã nắm được nền tảng quản lý truy cập AWS, bao gồm IAM và Organizations. Hiểu cách vận hành của policy, cách viết, cách đánh giá quyền, và cách áp dụng SCP trong môi trường nhiều account.
+  
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Lý thuyết đã học:
+  * Khái niệm về User – Group – Role – Policy và cơ chế evaluate
+  * Inline policy, managed policy, permission boundary
+  * Cấu trúc AWS Organizations, OU
+  * Khái niệm SCP và sự khác biệt so với IAM policy
+  * Landing Zone – Control Tower overview
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+  
+* Thực hành với bài lab:
+  * Tạo user/group/role và test truy cập
+  * Viết policy JSON và thử deny/allow theo từng hành vi
+  * Tạo Organization, OU và áp SCP
+  * Kiểm tra sự kết hợp SCP + IAM policy trong thực tế
