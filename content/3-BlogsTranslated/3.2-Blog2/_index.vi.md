@@ -1,9 +1,9 @@
 ---
-title: "Blog 1"
+title: "Blog 2"
 date: "2025-10-15"
-weight: 1
+weight: 3
 chapter: false
-pre: " <b> 3.1. </b> "
+pre: " <b> 3.1 </b> "
 ---
 # **Thông báo kết thúc hỗ trợ và khả năng khám phá nâng cao cho Amazon EKS**
 
