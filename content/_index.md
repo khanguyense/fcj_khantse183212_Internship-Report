@@ -27,7 +27,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 06/09/2025 to 09/12/2025
 
-![Avatar](/static/images/01_AWS_profile.jpg)
+![Avatar](images/01_AWS_profile.jpg)
 
 ### Report Content
 
