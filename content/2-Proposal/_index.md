@@ -57,7 +57,7 @@ All access is protected by **Amazon Cognito** (researcher vs admin authorization
 Academic Research Chatbot applies the AWS Hybrid RAG Architecture model with IDP (Intelligent Document Processing), combining a single EC2 (FastAPI + Qdrant + Worker) with managed AI services (Textract, Bedrock) to optimize costs while ensuring performance for about 50 internal users.
 
 **Data Processing and Conversation Flow**
-![Architecture Diagram](images/2-Proposal/FCJ-MVP.drawio%20(10).png)
+![architech](/images/2-Proposal/FCJ-MVP.png)
 
 **AWS Services Used**
 -   **Amazon Route 53:** DNS management for chatbot platform domain.
